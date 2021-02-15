@@ -5,10 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
+    crossorigin="anonymous" />
     <title>Currency Converter</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="top">
+            <span class="top__current"></span>
+            <span class="top__output"></span>
+            <input type="text" class="amount--input" id="amount">
+            <button class="amount--clear" id="clear">Clear</button>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <select class="bottom__current--select" id="current--select">
+            <option class="current--currency" id="current--usd">USD</option>
+            <option class="current--currency" id="current--eur">EUR</option>
+            <option class="current--currency" id="current--jpy">JPY</option>
+            <option class="current--currency" id="current--gpd">GBP</option>
+            <option class="current--currency" id="current--aud">AUD</option>
+            <option class="current--currency" id="current--cad">CAD</option>
+            <option class="current--currency" id="current--chf">CHF</option>
+        </select>
+        <select class="bottom__output--select" id="output--select">
+            <option class="output--currency" id="output--usd">USD</option>
+            <option class="output--currency" id="output--eur">EUR</option>
+            <option class="output--currency" id="output--jpy">JPY</option>
+            <option class="output--currency" id="output--gpd">GBP</option>
+            <option class="output--currency" id="output--aud">AUD</option>
+            <option class="output--currency" id="output--cad">CAD</option>
+            <option class="output--currency" id="output--chf">CHF</option>
+        </select>
+        <button class="bottom__convert--btn" id="convert--btn">Convert</button>
+    </div>
 </body>
 <script src="app.js"></script>
 </html>
