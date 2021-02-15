@@ -1,5 +1,16 @@
-*,
-*::before,
-*::after {
+* {
     box-sizing: border-box;
+}
+
+/* Custom Properties */
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+
+    --fw-regular: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #000;
+
+    --bs: --clr-bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.5);
 }
