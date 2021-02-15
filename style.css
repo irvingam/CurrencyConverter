@@ -6,11 +6,76 @@
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
 
+    --fs-normal: 1em;
+
     --fw-regular: 300;
     --fw-bold: 900;
 
     --clr-light: #fff;
     --clr-dark: #000;
+    --clr-one: #011a3d;
+    --clr-two: #1962c9; 
 
-    --bs: --clr-bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.5);
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.5);
+}
+
+/* General Styles */
+
+body {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+    font-family: var(--ff-primary);
+}
+
+h1 {
+    text-align: center;
+    font-weight: var(--fw-bold);
+}
+
+/* Class Styles */
+
+.container {
+    background-color: var(--clr-one);
+    color: var(--clr-light);
+    padding: 20px;
+    box-shadow: var(--bs);
+    font-size: var(--fs-normal);
+    border-radius: 50px;
+}
+
+.top__display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top__input {
+    display: flex;
+    justify-content: center;
+    padding: 2em 0 5em 0;
+}
+
+.amount--input,
+.bottom__current--select,
+.bottom__output--select {
+    font-size: var(--fs-normal);
+    padding: 3px;
+}
+
+.bottom__convert--btn,
+.amount--clear {
+    font-size: var(--fs-normal);
+    padding: 4px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    margin: 2px;
 }
