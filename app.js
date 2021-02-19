@@ -23,6 +23,8 @@ function converter() {
     usd()
     // EUR convert function
     eur()
+    // JPY convert function
+    jpy()
 
 }
 
@@ -31,79 +33,44 @@ function test() {
 }
 
 // currency functions
+
+
 function usd() {
     let total
-
-    switch (current.value == 1) {
-        // USD to USD
-        case output.value == 1:
-            total = input.value * 1
-            break
-        // USD to EUR
-        case output.value == 2:
-            total = input.value * 0.83
-            break
-        // USD to JPY
-        case output.value == 3:
-            total = input.value * 105.70
-            break
-        // USD to GDP
-        case output.value == 4:
-            total = input.value * 0.72
-            break
-        // USD to AUD
-        case output.value == 5:
-            total = input.value * 1.29
-            break
-        // USD to CAD
-        case output.value == 6:
-            total = input.value * 1.27
-            break
-        // USD to CHF
-        case output.value == 7:
-            total = input.value * 0.09
-        default:
-            undefined
-            break   
-         }
-    test()
+    if(current.value != 1) {return undefined}
+    if (current.value == 1 && output.value == 1) {total = input.value * 1} 
+    if (current.value == 1 && output.value == 2) {total = input.value * 0.83} 
+    if (current.value == 1 && output.value == 3) {total = input.value * 104.99} 
+    if (current.value == 1 && output.value == 4) {total = input.value * 0.72} 
+    if (current.value == 1 && output.value == 5) {total = input.value * 1.29} 
+    if (current.value == 1 && output.value == 6) {total = input.value * 1.26} 
+    if (current.value == 1 && output.value == 7) {total = input.value * 0.89} 
     console.log(total)
     
 }
 
 function eur() {
     let total
+    if (current.value != 2) {return undefined}
+    if (current.value == 2 && output.value == 1) {total = input.value * 1.21} 
+    if (current.value == 2 && output.value == 2) {total = input.value * 1} 
+    if (current.value == 2 && output.value == 3) {total = input.value * 127.24} 
+    if (current.value == 2 && output.value == 4) {total = input.value * 0.87} 
+    if (current.value == 2 && output.value == 5) {total = input.value * 1.56} 
+    if (current.value == 2 && output.value == 6) {total = input.value * 1.56} 
+    if (current.value == 2 && output.value == 7) {total = input.value * 1.08}
+    console.log(total)
+}
 
-    switch (current.value == 2) {
-        // EUR to USD
-        case output.value == 1:
-            total = input.value * 1.21
-            break
-        // EUR to EUR
-        case output.value == 2:
-            total = input.value * 1
-            break
-        // EUR to JPY
-        case output.value == 3:
-            total = input.value * 127.79
-            break
-        // EUR to GDP
-        case output.value == 4:
-            total = input.value * 0.87
-            break
-        // EUR to AUD
-        case output.value == 5:
-            total = input.value * 1.56
-            break
-        // EUR to CAD
-        case output.value == 6:
-            total = input.value * 1.54
-            break
-        // EUR to CHF
-        case output.value == 7:
-            total = input.value * 1.08
-        default:
-            break
-    }
+function jpy() {
+    let total
+    if (current.value != 3) {return undefined}
+    if (current.value == 3 && output.value == 1) {total = input.value * 0.0095} 
+    if (current.value == 3 && output.value == 2) {total = input.value * 0.0079} 
+    if (current.value == 3 && output.value == 3) {total = input.value * 1} 
+    if (current.value == 3 && output.value == 4) {total = input.value * 0.0069} 
+    if (current.value == 3 && output.value == 5) {total = input.value * 0.012} 
+    if (current.value == 3 && output.value == 6) {total = input.value * 0.012} 
+    if (current.value == 3 && output.value == 7) {total = input.value * 0.0085}
     console.log(total)
 }
