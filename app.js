@@ -30,7 +30,9 @@ function converter() {
     // AUD convert function
     aud()
     // CAD convert function
-
+    cad()
+    // CHF convert function
+    chf()
 
 }
 
@@ -122,5 +124,19 @@ function cad() {
     if (current.value == 6 && output.value == 5) {total = input.value * 1.02} 
     if (current.value == 6 && output.value == 6) {total = input.value * 1} 
     if (current.value == 6 && output.value == 7) {total = input.value * 0.7}
+    console.log(total)
+}
+
+// swiss franc
+function chf() {
+    let total
+    if (current.value != 7) {return undefined}
+    if (current.value == 7 && output.value == 1) {total = input.value * 1.12} 
+    if (current.value == 7 && output.value == 2) {total = input.value * 0.93} 
+    if (current.value == 7 && output.value == 3) {total = input.value * 117.73} 
+    if (current.value == 7 && output.value == 4) {total = input.value * 0.81} 
+    if (current.value == 7 && output.value == 5) {total = input.value * 1.44} 
+    if (current.value == 7 && output.value == 6) {total = input.value * 1.42} 
+    if (current.value == 7 && output.value == 7) {total = input.value * 1}
     console.log(total)
 }
