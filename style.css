@@ -51,7 +51,16 @@ h1 {
 
 .top__display {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    font-size: 2em;
+    vertical-align: center;
+}
+
+.fa-sync-alt {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    
 }
 
 .top__input {
