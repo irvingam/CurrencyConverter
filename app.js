@@ -8,6 +8,13 @@ const input = document.getElementById('amount')
 const current = document.getElementById('current--select')
 const output = document.getElementById('output--select')
 
+let convertedValues = []
+let convertedTotal = convertedValues.length
+
+// display selectors
+const currentDisplay = document.querySelector('.top__current')
+const outputDisplay = document.querySelector('.top__output')
+
                 // Events //
 // convert btn event
 convertBtn.addEventListener('click', converter)
@@ -33,11 +40,15 @@ function converter() {
     cad()
     // CHF convert function
     chf()
-
+    // update display function
+    updateDisplay()
 }
 
-function test() {
-    console.log('test')
+
+
+function updateDisplay() {
+    outputDisplay.innerText = convertedValues[convertedValues.length - 1]
+    currentDisplay.innerText = input.value
 }
 
 // currency functions
@@ -53,8 +64,7 @@ function usd() {
     if (current.value == 1 && output.value == 5) {total = input.value * 1.29} 
     if (current.value == 1 && output.value == 6) {total = input.value * 1.26} 
     if (current.value == 1 && output.value == 7) {total = input.value * 0.89} 
-    console.log(total)
-    
+    convertedValues.push(total)
 }
 
 //  european euro
@@ -68,7 +78,7 @@ function eur() {
     if (current.value == 2 && output.value == 5) {total = input.value * 1.56} 
     if (current.value == 2 && output.value == 6) {total = input.value * 1.56} 
     if (current.value == 2 && output.value == 7) {total = input.value * 1.08}
-    console.log(total)
+    convertedValues.push(total)
 }
 
 // japanese yen
@@ -82,7 +92,7 @@ function jpy() {
     if (current.value == 3 && output.value == 5) {total = input.value * 0.012} 
     if (current.value == 3 && output.value == 6) {total = input.value * 0.012} 
     if (current.value == 3 && output.value == 7) {total = input.value * 0.0085}
-    console.log(total)
+    convertedValues.push(total)
 }
 
 // british pound
@@ -96,7 +106,7 @@ function gbp() {
     if (current.value == 4 && output.value == 5) {total = input.value * 1.79} 
     if (current.value == 4 && output.value == 6) {total = input.value * 1.76} 
     if (current.value == 4 && output.value == 7) {total = input.value * 1.24}
-    console.log(total)
+    convertedValues.push(total)
 }
 
 // austrialian dollar
@@ -110,7 +120,7 @@ function aud() {
     if (current.value == 5 && output.value == 5) {total = input.value * 1} 
     if (current.value == 5 && output.value == 6) {total = input.value * 0.98} 
     if (current.value == 5 && output.value == 7) {total = input.value * 1.02}
-    console.log(total)
+    convertedValues.push(total)
 }
 
 // canadian dollar
@@ -124,7 +134,7 @@ function cad() {
     if (current.value == 6 && output.value == 5) {total = input.value * 1.02} 
     if (current.value == 6 && output.value == 6) {total = input.value * 1} 
     if (current.value == 6 && output.value == 7) {total = input.value * 0.7}
-    console.log(total)
+    convertedValues.push(total)
 }
 
 // swiss franc
@@ -138,5 +148,6 @@ function chf() {
     if (current.value == 7 && output.value == 5) {total = input.value * 1.44} 
     if (current.value == 7 && output.value == 6) {total = input.value * 1.42} 
     if (current.value == 7 && output.value == 7) {total = input.value * 1}
-    console.log(total)
+    convertedValues.push(total)
 }
+
