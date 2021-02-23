@@ -47,12 +47,8 @@ function converter() {
     chf()
     // update display function
     updateDisplay()
-
-    empty()
 }
-
-
-
+// will update current and output displays
 function updateDisplay() {
     outputDisplay.innerText = convertedValues[convertedValues.length - 1]
     currentDisplay.innerText = input.value
@@ -62,7 +58,7 @@ function updateDisplay() {
 
 // us dollar
 function usd() {
-    let total
+    let total, sum 
     if(current.value != 1) {return undefined}
     if (current.value == 1 && output.value == 1) {total = input.value * 1} 
     if (current.value == 1 && output.value == 2) {total = input.value * 0.83} 
@@ -71,7 +67,7 @@ function usd() {
     if (current.value == 1 && output.value == 5) {total = input.value * 1.29} 
     if (current.value == 1 && output.value == 6) {total = input.value * 1.26} 
     if (current.value == 1 && output.value == 7) {total = input.value * 0.89} 
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
 
 //  european euro
@@ -85,7 +81,7 @@ function eur() {
     if (current.value == 2 && output.value == 5) {total = input.value * 1.56} 
     if (current.value == 2 && output.value == 6) {total = input.value * 1.56} 
     if (current.value == 2 && output.value == 7) {total = input.value * 1.08}
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
 
 // japanese yen
@@ -99,7 +95,7 @@ function jpy() {
     if (current.value == 3 && output.value == 5) {total = input.value * 0.012} 
     if (current.value == 3 && output.value == 6) {total = input.value * 0.012} 
     if (current.value == 3 && output.value == 7) {total = input.value * 0.0085}
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
 
 // british pound
@@ -113,7 +109,7 @@ function gbp() {
     if (current.value == 4 && output.value == 5) {total = input.value * 1.79} 
     if (current.value == 4 && output.value == 6) {total = input.value * 1.76} 
     if (current.value == 4 && output.value == 7) {total = input.value * 1.24}
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
 
 // austrialian dollar
@@ -127,7 +123,7 @@ function aud() {
     if (current.value == 5 && output.value == 5) {total = input.value * 1} 
     if (current.value == 5 && output.value == 6) {total = input.value * 0.98} 
     if (current.value == 5 && output.value == 7) {total = input.value * 1.02}
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
 
 // canadian dollar
@@ -141,7 +137,7 @@ function cad() {
     if (current.value == 6 && output.value == 5) {total = input.value * 1.02} 
     if (current.value == 6 && output.value == 6) {total = input.value * 1} 
     if (current.value == 6 && output.value == 7) {total = input.value * 0.7}
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
 
 // swiss franc
@@ -155,10 +151,5 @@ function chf() {
     if (current.value == 7 && output.value == 5) {total = input.value * 1.44} 
     if (current.value == 7 && output.value == 6) {total = input.value * 1.42} 
     if (current.value == 7 && output.value == 7) {total = input.value * 1}
-    convertedValues.push(total)
+    convertedValues.push(Math.round(total * 10) / 10)
 }
-
-const usdCurrent = document.getElementById('usd--current')
-const usdText = usdCurrent.options[usdCurrent.selectedIndex].text
-
-console.log(usdText)
