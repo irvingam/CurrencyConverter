@@ -8,6 +8,7 @@ const input = document.getElementById('amount')
 const current = document.getElementById('current--select')
 const output = document.getElementById('output--select')
 
+// converted values array and array length
 let convertedValues = []
 let convertedTotal = convertedValues.length
 
@@ -18,6 +19,10 @@ const outputDisplay = document.querySelector('.top__output')
                 // Events //
 // convert btn event
 convertBtn.addEventListener('click', converter)
+// convert press enter event
+document.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {converter()}
+})
 // clear btn event
 clearBtn.addEventListener('click', () => {
     input.value = ''
@@ -42,6 +47,8 @@ function converter() {
     chf()
     // update display function
     updateDisplay()
+
+    empty()
 }
 
 
@@ -151,3 +158,7 @@ function chf() {
     convertedValues.push(total)
 }
 
+const usdCurrent = document.getElementById('usd--current')
+const usdText = usdCurrent.options[usdCurrent.selectedIndex].text
+
+console.log(usdText)
